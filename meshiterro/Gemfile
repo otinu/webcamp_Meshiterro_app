@@ -64,4 +64,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ここから、手動で入力================================================================================
 
+ #2章-----------
 gem 'devise'
+
+ #3章-----------
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
