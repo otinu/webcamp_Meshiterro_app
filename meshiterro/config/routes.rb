@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #5章にて『get 'users/show'』は削除
-  
+
   #ここから手動で追記(3章)================================
   # 『root to: 'homes#top'』がないとTop画面がおかしくなり、あるとページング機能が働かず、2ページ目に移動しようとすると、Topページへ移行してしまう。
   devise_for :users
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   #ここまで手動で追記(3章)================================
 
   #ここから手動で追記(5章)================================
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
 
   #ここまで手動で追記(5章)================================
 

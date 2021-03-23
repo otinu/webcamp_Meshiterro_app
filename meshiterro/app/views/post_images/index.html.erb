@@ -3,7 +3,11 @@
   <%= link_to post_image_path(post_image.id) do %>
    <%= attachment_image_tag post_image, :image %>
   <% end %>
-  <!--『投稿ユーザー画像』部分があるとエラー発生のため、削除--->
+  <!--usersモデルと紐づいたshowファイルには、showアクション時にインスタンス変数@userへ諸々の情報が格納されていた。そのため、attachment_image_tagの右隣には@userが指定されていた。
+  今回はインスタンス変数内に必要な情報が格納されていない状況のため、PostImageモデルとアソシエーションされたUserモデルから直接情報を取りに行っているようなイメージ-->
+
+    <p><%= attachment_image_tag post_image.user, :profile_image, :fill, 60, 60 %></p>
+  <!------------------------no_image.jpgは読み込みができないため、上記より削除------------------------------------------------------------------------------------>
     <p>ショップ名: <%= post_image.shop_name %></p>
     <p>説明 <%= post_image.caption %></p>
     <p>ユーザーネーム: <%= post_image.user.name %></p> <!-- ブロック変数post_imageに格納された、userモデルのnameカラム内の該当キーを出力 -->

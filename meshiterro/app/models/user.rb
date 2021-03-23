@@ -9,6 +9,8 @@ class User < ApplicationRecord
   #ここから手動で追記(4章)====================================
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  #ここから手動で追記(5章)====================================
+  attachment :profile_image
 
   #ここまで手動で追記=========================================
 

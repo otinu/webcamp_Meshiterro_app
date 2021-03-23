@@ -1,6 +1,10 @@
 <div class="profile\container">
   <h3 class="profile-name"><%= @user.name %></h3>
-  <!--『投稿ユーザー画像』部分があるとエラー発生のため、削除--->
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100 %>
+  <!------------------------no_image.jpgは読み込みができないため、上記より削除------------------>
+  <% if @user.id == current_user.id %>
+   <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <% end %>
 </div>
 
 
