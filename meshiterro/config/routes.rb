@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
 
   #ここまで手動で追記=====================================
-  #上記のdevise_for :usersは2章でdeviseコマンド入力時に自動で生成されたもの。一方で5章で作成したresources :usersはコントローラやアクションも手動で定義した
+  #上記のdevise_for :usersは2章でdeviseコマンド入力時に自動で生成されたもの。一方で5章で作成したresources :usersはコントローラやアクションも手動で定義した。
   #つまり、2章で作ったdeviseのUserモデルと5章で作ったUsersコントローラやアクションはまったく別物。
 
 end
